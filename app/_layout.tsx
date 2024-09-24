@@ -6,6 +6,11 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Login from '@/components/ui/Login';
+import SignUp from '@/components/ui/SignUp';
+import Content from '@/components/ui/Content';
+import SignUpAndPasswordButton from '@/components/ui/SignUpAndPasswordButton';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,11 +32,11 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <SafeAreaView style={{flex:1}}>
+      {/* <Login/> */}
+      {/* <SignUp/> */}
+      {/* <Content/> */}
+      <SignUpAndPasswordButton/>
+    </SafeAreaView>
   );
 }
